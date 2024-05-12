@@ -2,6 +2,7 @@
 import { takeLatest, delay, put, call } from "redux-saga/effects";
 import actionTypes from "../actionTypes/jobDetails";
 import { getJobDetailsFailure, getJobDetailsSuccess } from "../actions/jobDetails";
+import { getAllJobDetailsData } from "../APIs/jobDetailsAPIEndpoints";
 
 
 function* fetchJobDetailsDataRequest(action) {
