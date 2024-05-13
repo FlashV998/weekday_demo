@@ -9,8 +9,8 @@ import rootSaga from "./sagas";
 const reduxLogger = createLogger({});
 const sagaMiddleware = createSagaMiddleware();
 
-const isDevelopment =
-  process.env.REACT_APP_ENVIRONMENT_VARIABLE === "development";
+const isDevelopment = true
+  // process.env.REACT_APP_ENVIRONMENT_VARIABLE === "development";
 
 
 const composeEnhancers =

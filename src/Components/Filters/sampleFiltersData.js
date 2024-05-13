@@ -1,183 +1,48 @@
 export const rolesOptions = [
-    {
-        logo: '💻',
-        'default': 'backend',
-        clusters: [
-            'backend',
-            'frontend',
-            'fullstack',
-            'iOS',
-            'flutter',
-            'react native',
-            'android',
-            'frontend',
-            'tech lead',
-            'dev-ops',
-            'data engineer',
-            'data science',
-            'computer-vision',
-            'nlp',
-            'deep-learning',
-            'test / qa',
-            'Web3',
-            'deep-learning',
-            'sre',
-            'data-infrastructure'
-        ],
-        categoryName: 'Engineering',
-        minThreshold: 200,
-        occupationName: 'SOFTWARE_ENGINEER'
-    },
-    {
-        logo: '🎨',
-        'default': 'graphic designer',
-        clusters: [
-            'designer',
-            'design manager',
-            'graphic designer',
-            'product designer'
-        ],
-        categoryName: 'Design',
-        minThreshold: 200,
-        occupationName: 'DESIGNER'
-    },
-    {
-        logo: '💡',
-        'default': 'product manager',
-        clusters: [
-            'product manager'
-        ],
-        categoryName: 'Product',
-        minThreshold: 200,
-        occupationName: 'PRODUCT'
-    },
-    {
-        logo: '🛠️',
-        'default': 'Operations Manager',
-        clusters: [
-            'Operations Manager',
-            'founder’s office/chief Of staff'
-        ],
-        categoryName: 'Operations',
-        minThreshold: 200,
-        occupationName: 'OPERATIONS'
-    },
-    {
-        logo: '📈',
-        'default': 'sales development representative',
-        clusters: [
-            'sales development representative',
-            'account executive',
-            'account manager'
-        ],
-        categoryName: 'Sales',
-        minThreshold: 200,
-        occupationName: 'SALES'
-    },
-    {
-        logo: '📢',
-        'default': 'Marketing',
-        clusters: [
-            'digital marketing manager',
-            'growth hacker',
-            'Marketing',
-            'product marketing manager'
-        ],
-        categoryName: 'Marketing',
-        minThreshold: 200,
-        occupationName: 'MARKETING'
-    },
-    {
-        logo: '⚙️',
-        'default': 'hardware',
-        clusters: [
-            'hardware',
-            'mechanical',
-            'Systems'
-        ],
-        categoryName: 'Other Engineering',
-        minThreshold: 200,
-        occupationName: 'OTHER_ENGINEERING'
-    },
-    {
-        logo: '🛠️',
-        'default': 'business analyst',
-        clusters: [
-            'business analyst'
-        ],
-        categoryName: 'Business Analyst',
-        minThreshold: 200,
-        occupationName: 'BUSINESS_ANALYST'
-    },
-    {
-        logo: '🛠️',
-        'default': 'data analyst',
-        clusters: [
-            'data analyst'
-        ],
-        categoryName: 'Data Analyst',
-        minThreshold: 200,
-        occupationName: 'DATA_ANALYST'
-    },
-    {
-        logo: '🛠️',
-        'default': 'project manager',
-        clusters: [
-            'project manager'
-        ],
-        categoryName: 'Project Manager',
-        minThreshold: 200,
-        occupationName: 'PROJECT_MANAGER'
-    },
-    {
-        logo: '💼',
-        'default': 'management',
-        clusters: [
-            'management'
-        ],
-        categoryName: 'Management',
-        minThreshold: 200,
-        occupationName: 'MANAGEMENT'
-    },
-    {
-        logo: '🎗',
-        'default': 'legal',
-        clusters: [
-            'legal'
-        ],
-        categoryName: 'Legal',
-        minThreshold: 200,
-        occupationName: 'LEGAL'
-    },
-    {
-        logo: '👔',
-        'default': 'hr',
-        clusters: [
-            'hr'
-        ],
-        categoryName: 'hr',
-        minThreshold: 200,
-        occupationName: 'HR'
-    },
-    {
-        logo: '💰',
-        'default': 'finance',
-        clusters: [
-            'finance'
-        ],
-        categoryName: 'Finance',
-        minThreshold: 200,
-        occupationName: 'FINANCE'
-    },
-    {
-        logo: '🌐',
-        'default': '',
-        clusters: [],
-        categoryName: 'Others',
-        minThreshold: 200,
-        occupationName: 'OTHERS'
-    }
-]
+        { label: 'backend', value: 'backend', category: 'Engineering' },
+        { label: 'frontend', value: 'frontend', category: 'Engineering' },
+        { label: 'fullstack', value: 'fullstack', category: 'Engineering' },
+        { label: 'iOS', value: 'iOS', category: 'Engineering' },
+        { label: 'flutter', value: 'flutter', category: 'Engineering' },
+        { label: 'react native', value: 'react native', category: 'Engineering' },
+        { label: 'android', value: 'android', category: 'Engineering' },
+        { label: 'tech lead', value: 'tech lead', category: 'Engineering' },
+        { label: 'dev-ops', value: 'dev-ops', category: 'Engineering' },
+        { label: 'data engineer', value: 'data engineer', category: 'Engineering' },
+        { label: 'data science', value: 'data science', category: 'Engineering' },
+        { label: 'computer-vision', value: 'computer-vision', category: 'Engineering' },
+        { label: 'nlp', value: 'nlp', category: 'Engineering' },
+        { label: 'deep-learning', value: 'deep-learning', category: 'Engineering' },
+        { label: 'test / qa', value: 'test / qa', category: 'Engineering' },
+        { label: 'Web3', value: 'Web3', category: 'Engineering' },
+        { label: 'deep-learning', value: 'deep-learning', category: 'Engineering' },
+        { label: 'sre', value: 'sre', category: 'Engineering' },
+        { label: 'data-infrastructure', value: 'data-infrastructure', category: 'Engineering' },
+        { label: 'designer', value: 'designer', category: 'Design' },
+        { label: 'design manager', value: 'design manager', category: 'Design' },
+        { label: 'graphic designer', value: 'graphic designer', category: 'Design' },
+        { label: 'product designer', value: 'product designer', category: 'Design' },
+        { label: 'product manager', value: 'product manager', category: 'Product' },
+        { label: 'Operations Manager', value: 'Operations Manager', category: 'Operations' },
+        { label: 'founder’s office/chief Of staff', value: 'founder’s office/chief Of staff', category: 'Operations' },
+        { label: 'sales development representative', value: 'sales development representative', category: 'Sales' },
+        { label: 'account executive', value: 'account executive', category: 'Sales' },
+        { label: 'account manager', value: 'account manager', category: 'Sales' },
+        { label: 'digital marketing manager', value: 'digital marketing manager', category: 'Marketing' },
+        { label: 'growth hacker', value: 'growth hacker', category: 'Marketing' },
+        { label: 'Marketing', value: 'Marketing', category: 'Marketing'},
+        { label: 'hardware', value: 'hardware', category: 'Other Engineering' },
+        { label: 'mechanical', value: 'mechanical', category: 'Other Engineering' },
+        { label: 'Systems', value: 'Systems', category: 'Other Engineering' },
+        { label: 'business analyst', value: 'business analyst', category: 'Business Analyst' },
+        { label: 'data analyst', value: 'data analyst', category: 'Data Analyst' },
+        { label: 'project manager', value: 'project manager', category: 'Project Manager' },
+        { label: 'management', value: 'management', category: 'Management' },
+        { label: 'legal', value: 'legal', category: 'Legal' },
+        { label: 'hr', value: 'hr', category: 'hr' },
+        { label: 'finance', value: 'finance', category: 'Finance' }
+    ];
+    
 
 export const employeeCountOptions = [
     { value: '1-10', label: '1-10' },
@@ -189,26 +54,27 @@ export const employeeCountOptions = [
     { value: '500+', label: '500+' }
 ]
 
-const experienceOptions = [
-    {value:1,label:1},
-    {value:2,label:2},
-    {value:3,label:3},
-    {value:4,label:4},
-    {value:5,label:5},
-    {value:6,label:6},
-    {value:7,label:7},
-    {value:8,label:8},
-    {value:9,label:9},
-    {value:10,label:10},
+export const experienceOptions = [
+    {value:'0',label:'0'},
+    {value:'1',label:'1'},
+    {value:'2',label:'2'},
+    {value:'3',label:'3'},
+    {value:'4',label:'4'},
+    {value:'5',label:'5'},
+    {value:'6',label:'6'},
+    {value:'7',label:'7'},
+    {value:'8',label:'8'},
+    {value:'9',label:'9'},
+    {value:'10',label:'10'},
 ]
 
-const workPlaceOptions = [
+export const workPlaceOptions = [
     {value:'Remote',label:'Remote'},
     {value:'Hybrid',label:'Hybrid'},
     {value:'In-Office',label:'In-Office'},
 ]
 
-const basePayOptions = [
+export const basePayOptions = [
     {value:'0L',label:'0L'},
     {value:'10L',label:'10L'},
     {value:'20L',label:'20L'},

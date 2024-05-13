@@ -9,32 +9,48 @@ export default function MultiAutoComplete({
     setValue,
     options,
     placeholder,
-    heading
+    heading,
+    groupBy,
+    multiple
 }) {
   return (
-    <Stack spacing={3} sx={{ width: 500 }}>
+    // <Stack spacing={3} sx={{ width: 500 }}>
       <Autocomplete
-        multiple
+        groupBy={groupBy ? (option) => option?.category : null}
+        multiple={multiple}
         id="tags-standard"
         options={options}
+        onChange={(event, obj)=>{
+          setValue(obj)
+        }}
         getOptionLabel={(option) => option?.label}
         defaultValue={value}
         renderInput={(params) => (
           <TextField
             {...params}
             sx={{
+              width:"100%",
                 '.MuiInputBase-root':{
                     borderBottom:"none !important",
-                    padding:"6px 8px !important"
+                    padding:"6px 8px !important",
                 },
                 '.MuiInputBase-root':{
                     border:"1px solid #cccccc !important",
+                    borderRadius:"8px",
+
                 },
                 '.MuiInput-root::before':{
                     borderBottom:"none !important"
                 },
                 '.MuiInput-root::after':{
                     borderBottom:"none !important"
+                },
+                '.MuiInputBase-input::placeholder':{
+                  paddingLeft:"5px"
+                },
+                '.MuiFormLabel-root':{
+                  paddingLeft:"5px",
+                  color:"#0D0D0D"
                 },
             }}
             variant="standard"
@@ -43,6 +59,6 @@ export default function MultiAutoComplete({
           />
         )}
       />
-    </Stack>
+    // </Stack>
   );
 }

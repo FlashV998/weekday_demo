@@ -1,18 +1,63 @@
 import React from 'react'
 
-export default function JobCard() {
+export default function JobCard({
+    jobDetail
+}) {
+
+    const findSalary = (salary) => {
+        if (salary == null) {
+            return 0
+        }
+        return salary
+    }
+
+
     return (
         <div class="job-card">
-            <h2 class="job-card-title">Backend Engineer</h2>
-            <p class="job-card-company">Fampay</p>
-            <p class="job-card-location">Bangalore</p>
-            <p class="job-card-salary">Estimated Salary: 18-35 LPA</p>
+            <div style={{ display: "flex", alignItems: "start", justifyItems: "start" }}>
+                <div style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "100%"
+                }}><img src={jobDetail?.logoUrl} alt="company_logo" srcset="" style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "100%"
+                }} /></div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "start", justifyItems: "start",marginLeft:"10px" }}>
+                    <div class="job-card-company"
+                        style={{
+                            fontSize: "12px",
+                        }}>{jobDetail?.companyName}</div>
+                    <div class="job-card-title"
+                        style={{
+                            fontSize: "16px",
+                            fontWeight: '500'
+                        }}>{jobDetail?.jobRole}</div>
+
+                    <div class="job-card-location"
+                        style={{
+                            fontSize: "10px",
+                            fontWeight: '500'
+                        }}>{jobDetail?.location}</div>
+                </div>
+
+            </div>
+            <p class="job-card-salary">Estimated Salary: {jobDetail?.salaryCurrencyCode} {findSalary(jobDetail?.minJdSalary)}-{findSalary(jobDetail?.maxJdSalary)} LPA</p>
             <p class="job-card-description">
-                FamPay is building India's first neo-bank exclusively teens. FamPay helps teens make their own online and offline payments through UPI, FamPay App and FamCard. Our aim is to make banking cool for teens and to help them learn the value of money, savings and spending wisely. We are on a mission to raise a new, financially aware generation, and drive 250 Million+ Indian teenagers to kickstart their financial journey super early in their to View job
+            {jobDetail?.jobDetailsFromCompany}
             </p>
-            <div class="job-card-buttons">
-                <button>Easy Apply</button>
-                <button>Unlock referral asks</button>
+            <div>
+                <div style={{textDecoration:"uppercase"}}>Minimum Experience</div>
+                <div>{jobDetail?.minExp ?? 0} years</div>
+            </div>
+            <div style={{
+                marginTop:"10px"
+            }}>
+                <button className='btn-cyan'>Easy Apply</button>
+                <button className='btn-blue' style={{
+                    marginTop:"10px"
+                }}>Unlock referral asks</button>
             </div>
         </div>
     )
