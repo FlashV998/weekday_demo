@@ -4,6 +4,15 @@ const initialState = () => {
     return {
       jobDetails: [],
       jobDetailsSpinner: false,
+      currentFilterValues : {
+        selectedRoles:[],
+        employesCount:[],
+        experience:"",
+        workPlace:[],
+        basePay:[],
+        searchInput:"",
+      },
+      filteredList:[],
     };
   };
 
@@ -19,6 +28,7 @@ export default function MyJobDetails(state = initialState(), action = {}) {
       }
       case actionsTypes.FETCH_JOB_DETAILS_SUCCESS: {
         return {
+          ...state,
           jobDetails: payload,
           jobDetailsSpinner: false,
         };
@@ -29,6 +39,20 @@ export default function MyJobDetails(state = initialState(), action = {}) {
           jobDetailsSpinner: false,
         };
       }
+      case actionsTypes.UPDATE_FILTER_SETTINGS: {
+        return {
+          ...state,
+          currentFilterValues: {...payload},
+        };
+      }
+      case actionsTypes.UPDATE_FILTER_LIST: {
+        return {
+          ...state,
+          filteredList: [...payload],
+        };
+      }
+      
+      
     //   case actionTypes.CLEAR_JOB_DETAILS: {
     //     return {
     //       ...state,

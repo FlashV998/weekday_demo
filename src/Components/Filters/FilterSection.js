@@ -2,16 +2,41 @@ import React, { useEffect, useState } from 'react'
 import MultiAutoComplete from '../Dropdowns/MultiAutoComplete'
 import { basePayOptions, employeeCountOptions, experienceOptions, rolesOptions, workPlaceOptions } from './sampleFiltersData'
 import SearchBar from '../Dropdowns/SearchBar'
+import { useDispatch } from 'react-redux'
+import { updateFilterSettings } from '../../store/actions/jobDetails'
 
 export default function FilterSection({
-  selectedRoles, setSelectedRoles,
-  employesCount, setEmployesCount,
-  experience, setExperience,
-  workPlace, setWorkPlace,
-  basePay, setBasePay,
-  searchInput, setSearchInput,
+  setFiltedJobDetailsSpinner
 
 }) {
+
+  const [selectedRoles, setSelectedRoles] = useState([])
+  const [employesCount, setEmployesCount] = useState([])
+  const [experience, setExperience] = useState(null)
+  const [workPlace, setWorkPlace] = useState([])
+  const [basePay, setBasePay] = useState([])
+  const [searchInput, setSearchInput] = useState("")
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    let currentValues = {
+      selectedRoles,
+      employesCount,
+      experience,
+      workPlace,
+      basePay,
+      searchInput,
+    }
+    // if (selectedRoles?.length > 0 || employesCount?.length > 0 || experience || workPlace.length > 0 || basePay.length > 0 || searchInput)
+    dispatch(updateFilterSettings({ ...currentValues }))
+    setFiltedJobDetailsSpinner(true)
+  }, [selectedRoles,
+    employesCount,
+    experience,
+    workPlace,
+    basePay,
+    searchInput])
+
   return (
     <div className='filters-list'>
       <div className='filters-list-child'>
